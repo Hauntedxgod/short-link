@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of Page with url</title>
+</head>
+
+<body>
+
+<form th:method="POST" th:action="@{/url}" th:object="${getUrl}">
+    <label for="url"> Enter name of url</label>
+    <input type="text" th:field="*{url}" id="url">
+    <div style="color: red" th:if="${#fields.hasErrors('url')}" th:errors="*{url}">name Error</div>
+    <br/>
+    <input type="submit" value="Short link">
+</form>
+</body>
+
+</html>
